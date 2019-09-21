@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 
 import bgImage from '../images/background.jpg'
 import logo from '../images/logos.png'
-import Location from '../Screen/Location'
+import Home from "./Home";
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
@@ -32,7 +31,7 @@ class Login extends Component {
                         underlineColorAndroid='transparent'
                     />
                 </View>
-                <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Location",{screen:Location})}>
+                <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Home",{screen:Home})}>
                     <Text style={styles.text}>Login</Text>
                 </TouchableOpacity>
             </ImageBackground>
