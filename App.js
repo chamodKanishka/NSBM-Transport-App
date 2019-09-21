@@ -5,20 +5,33 @@
  * @format
  * @flow
  */
-
-import React, {Fragment} from 'react';
-
-
-import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-
+import React from 'react';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from 'react-navigation-stack';
 import Login from "./Screen/Login";
+import Location from './Screen/Location';
 
-const { width: WIDTH } = Dimensions.get('window')
-const App = () => {
-  return (
-      <Login/>
-  );
+
+export default class App extends React.Component {
+    render() {
+        return <AppContainer />;
+    }
 }
 
+//Creating Stack Navigator for All Routes in Application
+const AppNavigator = createStackNavigator({
+    Login: {
+        screen: Login,
+        navigationOptions: {  // Extra Navigation Options
+            header: null,  //Make the header bar Null - No Header
+            gesturesEnabled: false  //Gestures disable
+        },
+    },
+    Location: {
+        screen: Location
+    },
 
-export default App;
+});
+
+//Make App Navigator to creating app container
+const AppContainer = createAppContainer(AppNavigator);

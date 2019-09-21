@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-
+import { createDrawerNavigator, DrawerItems } from 'react-navigation';
 
 import bgImage from '../images/background.jpg'
 import logo from '../images/logos.png'
 import Location from '../Screen/Location'
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
