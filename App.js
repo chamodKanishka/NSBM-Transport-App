@@ -9,7 +9,7 @@ import React from 'react';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from "./Screen/Login";
-import Location from './Screen/Location';
+import Home from './Screen/Home';
 
 
 export default class App extends React.Component {
@@ -27,8 +27,8 @@ const AppNavigator = createStackNavigator({
             gesturesEnabled: false  //Gestures disable
         },
     },
-    Location: {
-        screen: Location,
+    Home: {
+        screen: Home,
         navigationOptions: {  // Extra Navigation Options
             header: null,  //Make the header bar Null - No Header
             gesturesEnabled: false  //Gestures disable

@@ -3,11 +3,11 @@ import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, T
 
 
 const { width: WIDTH } = Dimensions.get('window')
-class Location extends Component {
+class Home extends Component {
     render() {
         return (
-            <Text>Location</Text>
+            <Text>Home</Text>
         );
     }
 }
-export default Location;
+export default Home;
