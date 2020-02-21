@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, SafeAreaView, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import CircleButton from 'react-native-circle-button';
 import {Header, Icon, Left, Right} from "native-base";
+import bgImage from '../images/NSBM3.png';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Home extends Component {
@@ -16,7 +17,9 @@ class Home extends Component {
                         <Text style={styles.right}>Transport Service</Text>
                     </Right>
                 </Header>
+                <ImageBackground source={bgImage} style={styles.backgroundContainer}>
                     <CircleButton size={100} />
+                </ImageBackground>
             </View>
         );
     }
@@ -33,5 +36,12 @@ const styles = StyleSheet.create({
     right:{
         fontSize:24,
         color:"white"
-    }
+    },
+    backgroundContainer: {
+        flex: 1,
+        width: null,
+        height: null,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 })
