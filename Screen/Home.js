@@ -3,7 +3,10 @@ import {StyleSheet, Text, View, ImageBackground, SafeAreaView, Image, TextInput,
 import CircleButton from 'react-native-circle-button';
 import {Header, Icon, Left, Right} from "native-base";
 import bgImage from '../images/NSBM3.png';
-import centerIcon from '../images/attach.png';
+import centerIcon from '../images/bus.png';
+import leftIcon from '../images/map-location.png';
+import bottomIcon from '../images/settings.png';
+import topIcon from '../images/user.png';
 import Location from "./Location";
 import Settings from "./Settings";
 import Profile from "./Profile";
@@ -27,7 +30,10 @@ class Home extends Component {
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
                                   onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
                                   onPressButtonRight={()=>{}}
-                                  iconButtonCenter={centerIcon}/>
+                                  iconButtonCenter={centerIcon}
+                                  iconButtonLeft={leftIcon}
+                                  iconButtonBottom={bottomIcon}
+                                  iconButtonTop={topIcon}/>
                 </ImageBackground>
             </View>
         );
