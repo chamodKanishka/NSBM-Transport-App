@@ -10,6 +10,8 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './Screen/Login';
 import Home from './Screen/Home';
+import Location from "./Screen/Location";
+import Settings from "./Screen/Settings";
 
 
 export default class App extends React.Component {
@@ -34,6 +36,20 @@ const AppNavigator = createStackNavigator({
             gesturesEnabled: false  //Gestures disable
         },
     },
+    Location:{
+        screen: Location,
+        navigationOptions:{
+            header: null,
+            gestureEnabled: false
+        }
+    },
+    Settings:{
+        screen: Settings,
+        navigationOptions:{
+            header: null,
+            gestureEnabled: false
+        }
+    }
 
 });
 

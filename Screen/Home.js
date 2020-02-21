@@ -4,6 +4,7 @@ import CircleButton from 'react-native-circle-button';
 import {Header, Icon, Left, Right} from "native-base";
 import bgImage from '../images/NSBM3.png';
 import Location from "./Location";
+import Settings from "./Settings";
 
 const { width: WIDTH } = Dimensions.get('window')
 class Home extends Component {
@@ -19,7 +20,9 @@ class Home extends Component {
                     </Right>
                 </Header>
                 <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-                    <CircleButton size={80} primaryColor={"#003d99"} secondaryColor={"#196619"}/>
+                    <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"#196619"}
+                                  onPressButtonTop={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
+                                  onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}/>
                 </ImageBackground>
             </View>
         );
