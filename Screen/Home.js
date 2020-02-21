@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, ImageBackground, SafeAreaView, Image, TextInput,
 import CircleButton from 'react-native-circle-button';
 import {Header, Icon, Left, Right} from "native-base";
 import bgImage from '../images/NSBM3.png';
+import Location from "./Location";
 
 const { width: WIDTH } = Dimensions.get('window')
 class Home extends Component {
@@ -18,7 +19,7 @@ class Home extends Component {
                     </Right>
                 </Header>
                 <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-                    <CircleButton size={100} />
+                    <CircleButton size={80} primaryColor={"#003d99"} secondaryColor={"#196619"}/>
                 </ImageBackground>
             </View>
         );
