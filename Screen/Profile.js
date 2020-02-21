@@ -4,7 +4,7 @@ import {Header, Icon, Left, Right} from "native-base";
 
 
 const { width: WIDTH } = Dimensions.get('window')
-class Settings extends Component {
+class Profile extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -13,14 +13,14 @@ class Settings extends Component {
                         <Icon name="menu"/>
                     </Left>
                     <Right>
-                        <Text style={styles.right}>Settings</Text>
+                        <Text style={styles.right}>Profile</Text>
                     </Right>
                 </Header>
             </View>
         );
     }
 }
-export default Settings;
+export default Profile;
 
 const styles = StyleSheet.create({
     container:{

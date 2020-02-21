@@ -5,6 +5,7 @@ import {Header, Icon, Left, Right} from "native-base";
 import bgImage from '../images/NSBM3.png';
 import Location from "./Location";
 import Settings from "./Settings";
+import Profile from "./Profile";
 
 const { width: WIDTH } = Dimensions.get('window')
 class Home extends Component {
@@ -21,7 +22,8 @@ class Home extends Component {
                 </Header>
                 <ImageBackground source={bgImage} style={styles.backgroundContainer}>
                     <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"#196619"}
-                                  onPressButtonTop={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
+                                  onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
+                                  onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
                                   onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}/>
                 </ImageBackground>
             </View>
