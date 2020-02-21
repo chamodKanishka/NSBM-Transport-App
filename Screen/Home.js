@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, ImageBackground, SafeAreaView, Image, TextInput,
 import CircleButton from 'react-native-circle-button';
 import {Header, Icon, Left, Right} from "native-base";
 import bgImage from '../images/NSBM3.png';
+import centerIcon from '../images/attach.png';
 import Location from "./Location";
 import Settings from "./Settings";
 import Profile from "./Profile";
@@ -24,7 +25,9 @@ class Home extends Component {
                     <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"#196619"}
                                   onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
-                                  onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}/>
+                                  onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
+                                  onPressButtonRight={()=>{}}
+                                  iconButtonCenter={centerIcon}/>
                 </ImageBackground>
             </View>
         );
