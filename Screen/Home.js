@@ -25,7 +25,7 @@ class Home extends Component {
                     </Right>
                 </Header>
                 <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-                    <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"#196619"}
+                    <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"rgba(0,0,0,0.5)"}
                                   onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
                                   onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
