@@ -19,6 +19,15 @@ class Profile extends Component {
                         <Text style={{fontSize:24, color:"white"}}>Profile</Text>
                     </Right>
                 </Header>
+                <View style={{marginLeft:20,}}>
+                    <Text style={styles.label}>Name:</Text>
+                    <Text style={styles.label}>ID:</Text>
+                    <Text style={styles.label}>NIC:</Text>
+                    <Text style={styles.label}>Contact No:</Text>
+                    <Text style={styles.label}>Relevant's No:</Text>
+                    <Text style={styles.label}>Vehicle No:</Text>
+                    <Text style={styles.label}>Destination:</Text>
+                </View>
             </View>
         );
     }
@@ -35,5 +44,10 @@ const styles = StyleSheet.create({
     right:{
         fontSize:24,
         color:"white"
+    },
+    label:{
+        fontSize:20,
+        fontWeight:'700',
+        marginBottom:30
     }
 });
