@@ -28,14 +28,14 @@ const AppNavigator = createStackNavigator({
         screen: Login,
         navigationOptions: {  // Extra Navigation Options
             header: null,  //Make the header bar Null - No Header
-            gesturesEnabled: false  //Gestures disable
+            gestureEnabled: false  //Gestures disable
         },
     },
     Home: {
         screen: Home,
         navigationOptions: {  // Extra Navigation Options
             header: null,  //Make the header bar Null - No Header
-            gesturesEnabled: false  //Gestures disable
+            gestureEnabled: false  //Gestures disable
         },
     },
     Location:{
