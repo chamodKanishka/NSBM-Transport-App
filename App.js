@@ -13,6 +13,7 @@ import Home from './Screen/Home';
 import Location from "./Screen/Location";
 import Settings from "./Screen/Settings";
 import Profile from "./Screen/Profile";
+import Timetable from './Screen/Timetable';
 
 
 export default class App extends React.Component {
@@ -53,6 +54,13 @@ const AppNavigator = createStackNavigator({
     },
     Settings:{
         screen: Settings,
+        navigationOptions:{
+            header: null,
+            gestureEnabled: false
+        }
+    },
+    Timetable:{
+        screen: Timetable,
         navigationOptions:{
             header: null,
             gestureEnabled: false

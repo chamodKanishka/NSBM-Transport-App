@@ -7,9 +7,11 @@ import centerIcon from '../images/bus.png';
 import leftIcon from '../images/map-location.png';
 import bottomIcon from '../images/settings.png';
 import topIcon from '../images/user.png';
+import rightIcon from '../images/calendar.png';
 import Location from "./Location";
 import Settings from "./Settings";
 import Profile from "./Profile";
+import Timetable from './Timetable';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Home extends Component {
@@ -29,11 +31,12 @@ class Home extends Component {
                                   onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
                                   onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
-                                  onPressButtonRight={()=>{}}
+                                  onPressButtonRight={()=>{this.props.navigation.navigate("Timetable", {screen:Timetable})}}
                                   iconButtonCenter={centerIcon}
                                   iconButtonLeft={leftIcon}
                                   iconButtonBottom={bottomIcon}
-                                  iconButtonTop={topIcon}/>
+                                  iconButtonTop={topIcon}
+                                  iconButtonRight={rightIcon}/>
                 </ImageBackground>
             </View>
         );
