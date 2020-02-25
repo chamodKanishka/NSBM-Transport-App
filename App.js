@@ -27,42 +27,42 @@ const AppNavigator = createStackNavigator({
     Login: {
         screen: Login,
         navigationOptions: {  // Extra Navigation Options
-            header: null,  //Make the header bar Null - No Header
+            headerShown: false,  //Make the header bar Null - No Header
             gestureEnabled: false  //Gestures disable
         },
     },
     Home: {
         screen: Home,
         navigationOptions: {  // Extra Navigation Options
-            header: null,  //Make the header bar Null - No Header
+            headerShown: false,  //Make the header bar Null - No Header
             gestureEnabled: false  //Gestures disable
         },
     },
     Location:{
         screen: Location,
         navigationOptions:{
-            header: null,
+            headerShown: false,
             gestureEnabled: false
         }
     },
     Profile:{
         screen: Profile,
         navigationOptions:{
-            header: null,
+            headerShown: false,
             gestureEnabled: false
         }
     },
     Settings:{
         screen: Settings,
         navigationOptions:{
-            header: null,
+            headerShown: false,
             gestureEnabled: false
         }
     },
     Timetable:{
         screen: Timetable,
         navigationOptions:{
-            header: null,
+            headerShown: false,
             gestureEnabled: false
         }
     }

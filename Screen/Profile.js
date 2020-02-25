@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import {Header, Icon, Left, Right} from "native-base";
 import Icons from 'react-native-vector-icons/Ionicons';
-import PhotoUpload from 'react-native-photo-upload';
 import Home from './Home';
 
 
@@ -20,26 +19,6 @@ class Profile extends Component {
                         <Text style={{fontSize:24, color:"white"}}>Profile</Text>
                     </Right>
                 </Header>
-                <PhotoUpload
-                    onPhotoSelect={avatar => {
-                        if (avatar) {
-                            console.log('Image base64 string: ', avatar)
-                        }
-                    }}
-                >
-                    <Image
-                        style={{
-                            paddingVertical: 30,
-                            width: 150,
-                            height: 150,
-                            borderRadius: 75
-                        }}
-                        resizeMode='cover'
-                        source={{
-                            uri: 'https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg'
-                        }}
-                    />
-                </PhotoUpload>
                 <View style={{marginLeft:20,}}>
                     <Text style={styles.label}>Name:</Text>
                     <Text style={styles.label}>ID:</Text>
