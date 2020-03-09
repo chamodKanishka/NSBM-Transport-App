@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-
+import Icon from 'react-native-vector-icons/Ionicons'
+import Icons from 'react-native-vector-icons/AntDesign'
+import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 import bgImage from '../images/background.jpg'
 import logo from '../images/logos.png'
 import Home from "./Home";
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
+    constructor(){
+        super()
+        this.state = {
+            showPass: true,
+            press: false
+        }
+    }
+
+    showPass = () => {
+        if(this.state.press == false) {
+            this.setState({ showPass: false, press: true})
+        }
+        else {
+            this.setState({ showPass: true, press : false})
+        }
+    }
     render() {
         return (
             <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -15,6 +33,8 @@ class Login extends Component {
                     <Text style={styles.logoText}>NSBM TRANSPORT APP</Text>
                 </View>
                 <View style={styles.inputContainer}>
+                    <Icons name={'user'} size={24} color={'rgba(255,255,255,0.7)'}
+                     style={styles.inputIcon}></Icons>
                     <TextInput
                         style={styles.input}
                         placeholder={'Username'}
@@ -23,15 +43,22 @@ class Login extends Component {
                     />
                 </View>
                 <View style={styles.inputContainer}>
+                <Iconsi name={'textbox-password'} size={24} color={'rgba(255,255,255,0.7)'}
+                     style={styles.inputIcon}></Iconsi>
                     <TextInput
                         style={styles.input}
                         placeholder={'Password'}
-                        secureTextEntry={true}
+                        secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(255,255,255,0.7)'}
                         underlineColorAndroid='transparent'
                     />
+
+                    <TouchableOpacity style={styles.btnEye}
+                        onPress={this.showPass.bind(this)}>
+                        <Icon name={this.state.press == false ? 'ios-eye' : 'ios-eye-off'} size={26} color={'rgba(255,255,255,0.5)'} />
+                    </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Home",{screen:Home})}>
+                <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Home", {screen:Home})}>
                     <Text style={styles.text}>Login</Text>
                 </TouchableOpacity>
             </ImageBackground>
@@ -68,6 +95,12 @@ const styles = StyleSheet.create({
         marginTop: 10
 
     },
+    inputIcon:{
+        position: 'absolute',
+        top:8,
+        left:40
+
+    },
     input: {
         width: WIDTH - 55,
         height: 45,
@@ -93,6 +126,11 @@ const styles = StyleSheet.create({
         fontSize:16,
         textAlign: 'center'
 
+    },
+    btnEye:{
+        position:'absolute',
+        top: 8,
+        right: 37
     }
 
 
