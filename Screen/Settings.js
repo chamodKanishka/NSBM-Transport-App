@@ -31,15 +31,19 @@ class Settings extends Component {
                     <SectionRow text='Settings'>
                         <NavigateRow
                             text='Profile'
-                            iconName='ios-contact'
+                            iconName='user'
                             />
+                       <NavigateRow
+                        text='My E-ID'
+                        iconName='vcard-o'
+                        onPressCallback={this.navigateToMyEid} />
                         <SwitchRow
                             text='Allow Push Notification'
-                            iconName='your-icon-name'
+                            iconName='sticky-note'
                            />
                         <CheckRow
-                            text='Hide My Details'
-                            iconName='your-icon-name'
+                            text='Hide My Location'
+                            iconName='location-arrow'
                             _color='#000'
                             />
                         <SliderRow
@@ -49,6 +53,9 @@ class Settings extends Component {
                             _min={0}
                             _max={100}
                             />
+                            <NavigateRow
+                        text='Log Out'
+                        iconName='sign-out'/>
                     </SectionRow>
                 </ReactNativeSettingsPage>
             </View>
