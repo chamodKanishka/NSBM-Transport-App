@@ -5,7 +5,7 @@ import  Icons  from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
 import  MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
-
+import Logo from '../images/logo.png'
 
 
 class Location extends Component {
@@ -62,11 +62,13 @@ class Location extends Component {
                 }}
                 >
                     <Marker
-                        title={"National School of Bussiness Management"}
+                        title={"NSBM Green University Town"}
                         coordinate={{
                             latitude: 6.8211,
                             longitude: 80.0409,
                         }}
+                        pinColor={"green"}
+                        description={"National School of Bussiness Management"}
                      />
                 </MapView>
             </View>
