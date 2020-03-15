@@ -10,6 +10,15 @@ class Location extends Component {
     render() {
         return (
             <View style={styles.container}>
+            <Header style={styles.header}>
+                    <Left>
+                        <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Home", {screen:Home})}/>
+
+                    </Left>
+                    <Right>
+                        <Text style={{fontSize:24, color:"white"}}>Location</Text>
+                    </Right>
+                </Header>
                 <MapView
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
@@ -29,14 +38,25 @@ export default Location;
 
 const styles = StyleSheet.create({
     container: {
-      ...StyleSheet.absoluteFillObject,
-      height: 400,
-      width: 400,
-      justifyContent: 'flex-end',
-      alignItems: 'center',
+        flex:1,
+        height: null,
+        width: null,
+        //justifyContent:,
+        alignItems:'stretch',
+        ...StyleSheet.absoluteFillObject,
+  
+      },
+      map: {
+        ...StyleSheet.absoluteFillObject,
+        marginTop:50,
+        marginBottom:50,
+      },
+      header:{
+        backgroundColor:"#2196f3"
     },
-    map: {
-      ...StyleSheet.absoluteFillObject,
-    },
+    right:{
+        fontSize:24,
+        color:"white"
+    }
    });
    
