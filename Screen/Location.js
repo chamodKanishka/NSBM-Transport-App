@@ -70,6 +70,8 @@ class Location extends Component {
                         pinColor={"green"}
                         description={"National School of Bussiness Management"}
                         icon={Logo}
+                        rotation={0}
+                        opacity={1.0}
                      />
                 </MapView>
             </View>
