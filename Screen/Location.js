@@ -3,22 +3,12 @@ import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, T
 import {Header, Icon, Left, Right} from "native-base";
 import  Icons  from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import  MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
 
 
 
-const origin = {latitude: 6.8211, longitude: 80.0409};
-const waypoints ={latitude:6.9021, longitude:79.9195};
-const destination = {latitude: 6.9093, longitude: 79.8967};
-const mode = "DRIVING";
-const GOOGLE_MAPS_APIKEY = 'AIzaSyDPSp37X3waDDvB0X6-GXHOJdnREHsJHyY';
-
-class Location extends Component {  
-    componentWillUnmount() {
-        // used only when "providerListener" is enabled
-        LocationServicesDialogBox.stopListener(); // Stop the "locationProviderStatusChange" listener
-    }
+class Location extends Component {
     render() {
         LocationServicesDialogBox.checkLocationServicesIsEnabled({
             message: "<h2 style='color: #0af13e'>Use Location ?</h2>This app wants to change your device settings:<br/><br/>Use GPS, Wi-Fi, and cell network for location<br/><br/><a href='#'>Learn more</a>",
@@ -71,6 +61,13 @@ class Location extends Component {
                         longitudeDelta: 0.0121,
                 }}
                 >
+                    <Marker
+                        title={"National School of Bussiness Management"}
+                        coordinate={{
+                            latitude: 6.8211,
+                            longitude: 80.0409,
+                        }}
+                     />
                 </MapView>
             </View>
         );
