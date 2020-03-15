@@ -5,7 +5,7 @@ import  Icons  from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
 import  MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
-import Logo from '../images/logo.png'
+import Logo from '../images/logoss.png'
 
 
 class Location extends Component {
@@ -69,6 +69,7 @@ class Location extends Component {
                         }}
                         pinColor={"green"}
                         description={"National School of Bussiness Management"}
+                        icon={Logo}
                      />
                 </MapView>
             </View>
