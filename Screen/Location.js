@@ -6,6 +6,8 @@ import Home from './Home';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
 
+
+
 class Location extends Component {  
     componentWillUnmount() {
         // used only when "providerListener" is enabled
@@ -48,13 +50,16 @@ class Location extends Component {
                     </Right>
                 </Header>
                 <MapView
-                provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-                style={styles.map}
-                region={{
-                    latitude: 6.8211,
-                    longitude: 80.0409,
-                    latitudeDelta: 0.025,
-                    longitudeDelta: 0.0121,
+                    region={this.props.coordinate}
+                    provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+                    style={styles.map}
+                    showsUserLocation={true}
+                    showsMyLocationButton={true}
+                    region={{
+                        latitude: 6.8211,
+                        longitude: 80.0409,
+                        latitudeDelta: 0.025,
+                        longitudeDelta: 0.0121,
                 }}
                 >
                 </MapView>
