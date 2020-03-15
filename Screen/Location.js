@@ -14,10 +14,10 @@ class Location extends Component {
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
                 region={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.015,
-                    longitudeDelta: 0.0121,
+                    latitude: 6.8211,
+                 longitude: 80.0409,
+                 latitudeDelta: 0.025,
+                 longitudeDelta: 0.0121,
                 }}
                 >
                 </MapView>
