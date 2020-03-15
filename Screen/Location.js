@@ -6,6 +6,7 @@ import Home from './Home';
 import  MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
 import Logo from '../images/logoss.png'
+import DarkMap from './components/darkmap'
 
 
 class Location extends Component {
@@ -54,6 +55,7 @@ class Location extends Component {
                     showsCompass={true}
                     showsBuildings={true}
                     showsTraffic={true}
+                    customMapStyle={DarkMap}
                     region={{
                         latitude: 6.8211,
                         longitude: 80.0409,
