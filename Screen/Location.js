@@ -44,7 +44,7 @@ class Location extends Component {
 
                     </Left>
                     <Right>
-                        <Text style={{fontSize:24, color:"white"}}>Location</Text>
+                        <Text style={styles.text}>Location</Text>
                     </Right>
                 </Header>
                 <MapView
@@ -95,14 +95,19 @@ const styles = StyleSheet.create({
       },
       map: {
         ...StyleSheet.absoluteFillObject,
-        marginTop:50,
-        marginBottom:50,
+        marginTop:60,
+        marginLeft:5,
+        marginRight:5
       },
       header:{
         backgroundColor:"#2196f3"
     },
     right:{
         fontSize:24,
+        color:"white"
+    },
+    text:{
+        fontSize:24, 
         color:"white"
     }
    });
