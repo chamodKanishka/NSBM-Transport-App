@@ -9,7 +9,7 @@ import Logo from '../images/logoss.png'
 import DarkMap from './components/mapColor/darkmap'
 import LightMap from './components/mapColor/lightmap'
 
-async function requestCameraPermission() {
+async function requestLocationPermission() {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -24,9 +24,9 @@ async function requestCameraPermission() {
         },
       );
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        console.log('You can use the camera');
+        console.log('You can use the location');
       } else {
-        console.log('Camera permission denied');
+        console.log('Location permission denied');
       }
     } catch (err) {
       console.warn(err);
@@ -36,7 +36,7 @@ async function requestCameraPermission() {
 
 class Location extends Component {
     async componentDidMount(){
-        await requestCameraPermission()
+        await requestLocationPermission()
     }
 
     render() {

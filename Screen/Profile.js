@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, PermissionsAndroid, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import {Header, Icon, Left, Right} from "native-base";
 import Icons from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
 import PhotoUpload from 'react-native-photo-upload';
 
 
+async function requestCameraPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'NSBM Transport App Camera Permission',
+          message:
+            'NSBM Transort App needs access to your camera, ' +
+            'so you can share location.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
 const { width: WIDTH } = Dimensions.get('window')
 class Profile extends Component {
+    async componentDidMount(){
+        await requestCameraPermission()
+    }
     render() {
         return (
             <View style={styles.container}>
