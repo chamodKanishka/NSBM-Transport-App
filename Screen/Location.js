@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity, BackHandler, DeviceEventEmitter } from 'react-native';
+import {StyleSheet, Text, View, PermissionsAndroid, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity, BackHandler, DeviceEventEmitter } from 'react-native';
 import {Header, Icon, Left, Right} from "native-base";
 import  Icons  from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
@@ -9,8 +9,36 @@ import Logo from '../images/logoss.png'
 import DarkMap from './components/mapColor/darkmap'
 import LightMap from './components/mapColor/lightmap'
 
+async function requestCameraPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'NSBM Transport App Location Permission',
+          message:
+            'NSBM Transort App needs access to your location, ' +
+            'so you can share location.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
 
 class Location extends Component {
+    async componentDidMount(){
+        await requestCameraPermission()
+    }
+
     render() {
         LocationServicesDialogBox.checkLocationServicesIsEnabled({
             message: "<h2 style='color: #0af13e'>Use Location ?</h2>This app wants to change your device settings:<br/><br/>Use GPS, Wi-Fi, and cell network for location<br/><br/><a href='#'>Learn more</a>",
