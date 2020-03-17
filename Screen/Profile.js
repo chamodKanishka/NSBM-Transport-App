@@ -30,7 +30,6 @@ async function requestCameraPermission() {
     }
   }
 
-const { width: WIDTH } = Dimensions.get('window')
 class Profile extends Component {
     async componentDidMount(){
         await requestCameraPermission()
