@@ -17,6 +17,7 @@
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-android-location-services-dialog-box": "^2.8.2",
+    "react-native-bootsplash": "^2.1.0",
     "react-native-circle-button": "^1.0.9",
     "react-native-fs": "^2.16.6",
     "react-native-gesture-handler": "^1.5.6",

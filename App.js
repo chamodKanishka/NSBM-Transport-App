@@ -14,7 +14,9 @@ import Location from "./Screen/Location";
 import Settings from "./Screen/Settings";
 import Profile from "./Screen/Profile";
 import Timetable from './Screen/Timetable';
+import RNBootSplash from "react-native-bootsplash";
 
+RNBootSplash.hide();
 
 export default class App extends React.Component {
     render() {
