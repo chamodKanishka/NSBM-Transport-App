@@ -125,7 +125,8 @@ const styles = StyleSheet.create({
         ...StyleSheet.absoluteFillObject,
         marginTop:60,
         marginLeft:5,
-        marginRight:5
+        marginRight:5,
+        marginBottom:5
       },
       header:{
         backgroundColor:"#2196f3"
