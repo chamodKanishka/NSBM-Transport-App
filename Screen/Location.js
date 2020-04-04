@@ -4,10 +4,15 @@ import {Header, Icon, Left, Right} from "native-base";
 import  Icons  from 'react-native-vector-icons/Ionicons'
 import Home from './Home';
 import  MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
 import Logo from '../images/logoss.png'
 import DarkMap from './components/mapColor/darkmap'
 import LightMap from './components/mapColor/lightmap'
+
+const origin = {latitude: 6.8211, longitude: 80.0409};
+const destination = {latitude: 6.8412, longitude: 79.9654};
+const GOOGLE_MAPS_APIKEY = 'AIzaSyDPSp37X3waDDvB0X6-GXHOJdnREHsJHyY';
 
 async function requestLocationPermission() {
     try {
@@ -92,6 +97,13 @@ class Location extends Component {
                         longitudeDelta: 0.0121,
                 }}
                 >
+                <MapViewDirections
+                  origin={origin}
+                  destination={destination}
+                  apikey={GOOGLE_MAPS_APIKEY}
+                  strokeWidth={3}
+                  strokeColor="hotpink"
+                />
                     <Marker
                         title={"NSBM Green University Town"}
                         coordinate={{
