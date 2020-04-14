@@ -9,7 +9,7 @@ import bottomIcon from '../images/settings.png';
 import topIcon from '../images/user.png';
 import rightIcon from '../images/calendar.png';
 import Location from "./Location";
-import Settings from "./Settings";
+import SettingsContainer from "./SettingsContainer";
 import Profile from "./Profile";
 import Timetable from './Timetable';
 
@@ -20,17 +20,17 @@ class Home extends Component {
             <View style={styles.container}>
                 <Header style={styles.header}>
                     <Left>
-                        <Icon name="menu"/>
                     </Left>
                     <Right>
-                        <Text style={styles.right}>Transport Service</Text>
+                    <Text style={styles.left}>Transport Service</Text>
+                        
                     </Right>
                 </Header>
                 <ImageBackground source={bgImage} style={styles.backgroundContainer}>
                     <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"rgba(0,0,0,0.5)"}
                                   onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
-                                  onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
+                                  onPressButtonBottom={()=>{this.props.navigation.navigate("SettingsContainer", {screen:SettingsContainer})}}
                                   onPressButtonRight={()=>{this.props.navigation.navigate("Timetable", {screen:Timetable})}}
                                   iconButtonCenter={centerIcon}
                                   iconButtonLeft={leftIcon}
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
         flex:1,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
-    right:{
+    left:{
         fontSize:24,
         color:"white"
     },

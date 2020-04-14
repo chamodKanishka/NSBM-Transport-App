@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import {Header, Icon, Left, Right} from "native-base";
+import MyEid from './components/settings/MyEid'
 import Icons from 'react-native-vector-icons/Ionicons';
 import ReactNativeSettingsPage, {
     SectionRow,
@@ -15,6 +16,15 @@ import Home from './Home';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Settings extends Component {
+
+
+    navigateToMyEid = () => {
+        const {} = 
+        this.props.navigation.navigate
+        ('MyEid', {screen:MyEid});
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
@@ -29,10 +39,6 @@ class Settings extends Component {
                 </Header>
                 <ReactNativeSettingsPage>
                     <SectionRow text='Settings'>
-                        <NavigateRow
-                            text='Profile'
-                            iconName='user'
-                            />
                        <NavigateRow
                         text='My E-ID'
                         iconName='vcard-o'
@@ -45,13 +51,6 @@ class Settings extends Component {
                             text='Hide My Location'
                             iconName='location-arrow'
                             _color='#000'
-                            />
-                        <SliderRow
-                            text='Slider Row'
-                            iconName='your-icon-name'
-                            _color='#000'
-                            _min={0}
-                            _max={100}
                             />
                             <NavigateRow
                         text='Log Out'
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
         flex:1,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,

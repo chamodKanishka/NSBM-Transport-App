@@ -34,7 +34,7 @@ class Timetable extends Component {
         const state = this.state;
         return (
             <View style={styles.container}>
-                <Header style={{backgroundColor:"#2196f3"}}>
+                <Header style={styles.header}>
                     <Left>
                         <Icons name="md-arrow-back" size={30} onPress={() =>this.props.navigation.navigate("Home", {screen:Home})}/>
 
@@ -61,14 +61,14 @@ const styles = StyleSheet.create({
         flex:1,
     },
     header:{
-        backgroundColor:"#2196f3"
+        backgroundColor:"#2879fe"
     },
     right:{
         fontSize:24,
         color:"white"
     },
     tablecontainer: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-    head: { height: 40, backgroundColor: '#f1f8ff' },
+    head: { height: 40, backgroundColor: '#2879fe' },
     text: { margin: 6, fontWeight:'bold', fontSize:15, },
     table:{
         margin:5
