@@ -11,9 +11,10 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Login from './Screen/Login';
 import Home from './Screen/Home';
 import Location from "./Screen/Location";
-import SettingsContainer from "./Screen/SettingsContainer";
+import Settings from "./Screen/Settings";
 import Profile from "./Screen/Profile";
 import Timetable from './Screen/Timetable';
+import MyEid from './Screen/components/settings/MyEid';
 import RNBootSplash from "react-native-bootsplash";
 
 RNBootSplash.hide();
@@ -54,8 +55,8 @@ const AppNavigator = createStackNavigator({
             gestureEnabled: false
         }
     },
-    SettingsContainer:{
-        screen: SettingsContainer,
+    Settings:{
+        screen: Settings,
         navigationOptions:{
             headerShown: false,
             gestureEnabled: false
@@ -63,6 +64,13 @@ const AppNavigator = createStackNavigator({
     },
     Timetable:{
         screen: Timetable,
+        navigationOptions:{
+            headerShown: false,
+            gestureEnabled: false
+        }
+    },
+    MyEid:{
+        screen: MyEid,
         navigationOptions:{
             headerShown: false,
             gestureEnabled: false

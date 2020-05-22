@@ -3,8 +3,8 @@ import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, T
 import Icon from 'react-native-vector-icons/Ionicons'
 import Icons from 'react-native-vector-icons/AntDesign'
 import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
-import bgImage from '../images/background.jpg'
-import logo from '../images/logos.png'
+import bgImage from '../images/nsbm1.jpeg'
+import logo from '../images/logosss.png'
 import Home from "./Home";
 
 const { width: WIDTH } = Dimensions.get('window')
@@ -38,7 +38,7 @@ class Login extends Component {
                     <TextInput
                         style={styles.input}
                         placeholder={'Username'}
-                        placeholderTextColor={'rgba(255,255,255,0.7)'}
+                        placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
                     />
                 </View>
@@ -49,13 +49,13 @@ class Login extends Component {
                         style={styles.input}
                         placeholder={'Password'}
                         secureTextEntry={this.state.showPass}
-                        placeholderTextColor={'rgba(255,255,255,0.7)'}
+                        placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
                     />
 
                     <TouchableOpacity style={styles.btnEye}
                         onPress={this.showPass.bind(this)}>
-                        <Icon name={this.state.press == false ? 'ios-eye' : 'ios-eye-off'} size={26} color={'rgba(255,255,255,0.5)'} />
+                        <Icon name={this.state.press == false ? 'ios-eye' : 'ios-eye-off'} size={26} color={'rgba(0,0,0,0.5)'} />
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Home", {screen:Home})}>
@@ -81,15 +81,15 @@ const styles = StyleSheet.create({
 
     },
     logo: {
-        width: 120,
-        height: 120
+        width: 80,
+        height: 100
     },
     logoText: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: '500',
         marginTop: 10,
-        opacity: 0.5
+        opacity: 1
     },
     inputContainer:{
         marginTop: 10
@@ -105,10 +105,10 @@ const styles = StyleSheet.create({
         width: WIDTH - 55,
         height: 45,
         borderRadius: 25,
-        fontSize: 16,
+        fontSize: 20,
         paddingLeft: 45,
-        backgroundColor: 'rgba(0,0,0,0.35)',
-        color: 'rgba(255,255,255,0.7)',
+        backgroundColor: 'rgba(255,255,255,0.7)',
+        color: 'rgba(55,55,55,0.8)',
         marginHorizontal: 25
 
     },
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
         width: WIDTH - 55,
         height: 45,
         borderRadius: 25,
-        backgroundColor: '#432577',
+        backgroundColor: '#007aff',
         justifyContent: 'center',
         marginTop:20,
     },
     text:{
-        color: 'rgba(255,255,255,0.7)',
-        fontSize:16,
+        color: 'rgba(255,255,255,1)',
+        fontSize:20,
         textAlign: 'center'
 
     },

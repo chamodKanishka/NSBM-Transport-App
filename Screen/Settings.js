@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 import {Header, Icon, Left, Right} from "native-base";
-import MyEid from './components/settings/MyEid'
 import Icons from 'react-native-vector-icons/Ionicons';
 import ReactNativeSettingsPage, {
     SectionRow,
@@ -12,16 +11,15 @@ import ReactNativeSettingsPage, {
 } from 'react-native-settings-page';
 
 import Home from './Home';
-
+import MyEid from './components/settings/MyEid';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Settings extends Component {
 
 
     navigateToMyEid = () => {
-        const {} = 
-        this.props.navigation.navigate
-        ('MyEid', {screen:MyEid});
+        const { navigation } = this.props
+        navigation.navigate('MyEid');
     }
 
 

@@ -9,7 +9,7 @@ import bottomIcon from '../images/settings.png';
 import topIcon from '../images/user.png';
 import rightIcon from '../images/calendar.png';
 import Location from "./Location";
-import SettingsContainer from "./SettingsContainer";
+import Settings from "./Settings";
 import Profile from "./Profile";
 import Timetable from './Timetable';
 
@@ -30,7 +30,7 @@ class Home extends Component {
                     <CircleButton size={75} primaryColor={"#003d99"} secondaryColor={"rgba(0,0,0,0.5)"}
                                   onPressButtonTop={()=>{this.props.navigation.navigate("Profile", {screen:Profile})}}
                                   onPressButtonLeft={()=>{this.props.navigation.navigate("Location", {screen:Location})}}
-                                  onPressButtonBottom={()=>{this.props.navigation.navigate("SettingsContainer", {screen:SettingsContainer})}}
+                                  onPressButtonBottom={()=>{this.props.navigation.navigate("Settings", {screen:Settings})}}
                                   onPressButtonRight={()=>{this.props.navigation.navigate("Timetable", {screen:Timetable})}}
                                   iconButtonCenter={centerIcon}
                                   iconButtonLeft={leftIcon}

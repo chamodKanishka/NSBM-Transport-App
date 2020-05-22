@@ -11,9 +11,9 @@ import {
     TextInput
 } from 'react-native';
 
-class MyEid extends Component{
+export default class MyEid extends Component{
     state = {
-        text: '10018507',
+        text: 'https://www.fb.com',
     };
 
     render(){
@@ -31,7 +31,6 @@ class MyEid extends Component{
         );
     }
 }
-export default MyEid;
 
 const styles = StyleSheet.create({
     container: {
