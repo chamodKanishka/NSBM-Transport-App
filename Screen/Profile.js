@@ -4,6 +4,7 @@ import {Header, Icon, Left, Right} from "native-base";
 import Icons from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
 import PhotoUpload from 'react-native-photo-upload';
+import CommonUser from './commonUser'
 
 
 async function requestCameraPermission() {
@@ -35,6 +36,7 @@ class Profile extends Component {
         await requestCameraPermission()
     }
     render() {
+        console.log(CommonUser.driver)
         return (
             <View style={styles.container}>
                 <Header style={styles.header}>
@@ -70,13 +72,11 @@ class Profile extends Component {
                     </PhotoUpload>
                 </View>
                 <View style={{marginLeft:20,}}>
-                    <Text style={styles.label}>Name:</Text>
-                    <Text style={styles.label}>ID:</Text>
-                    <Text style={styles.label}>NIC:</Text>
-                    <Text style={styles.label}>Contact No:</Text>
-                    <Text style={styles.label}>Relevant's No:</Text>
-                    <Text style={styles.label}>Vehicle No:</Text>
-                    <Text style={styles.label}>Destination:</Text>
+                    <Text style={styles.label}>Name: {CommonUser.driver.name}</Text>
+                    <Text style={styles.label}>NIC: {CommonUser.driver.nic}</Text>
+                    <Text style={styles.label}>Contact No: {CommonUser.driver.contactNo}</Text>
+                    <Text style={styles.label}>Vehicle No: {CommonUser.driver.vehicalNo}</Text>
+                    <Text style={styles.label}>Destination: {CommonUser.driver.destination}</Text>
                 </View>
             </View>
         );

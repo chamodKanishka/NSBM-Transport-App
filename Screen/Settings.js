@@ -12,6 +12,8 @@ import ReactNativeSettingsPage, {
 
 import Home from './Home';
 import MyEid from './components/settings/MyEid';
+import Login from './Login';
+import CommonUser from './commonUser';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Settings extends Component {
@@ -20,6 +22,16 @@ class Settings extends Component {
     navigateToMyEid = () => {
         const { navigation } = this.props
         navigation.navigate('MyEid');
+    }
+
+
+    navigateToLogout = () => {
+        const {} = this.props.navigation.navigate
+        ('Login', {screen:Login});
+        console.log('login')
+        CommonUser.user = undefined;
+
+        CommonUser.driver = undefined;
     }
 
 
@@ -52,7 +64,8 @@ class Settings extends Component {
                             />
                             <NavigateRow
                         text='Log Out'
-                        iconName='sign-out'/>
+                        iconName='sign-out'
+                        onPressCallback={this.navigateToLogout}/>
                     </SectionRow>
                 </ReactNativeSettingsPage>
             </View>

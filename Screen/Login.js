@@ -6,6 +6,9 @@ import Iconsi from 'react-native-vector-icons/MaterialCommunityIcons'
 import bgImage from '../images/nsbm1.jpeg'
 import logo from '../images/logosss.png'
 import Home from "./Home";
+import Snackbar from 'react-native-snackbar-component';
+import CommonUser from './commonUser';
+import axios from 'axios';
 
 const { width: WIDTH } = Dimensions.get('window')
 class Login extends Component {
@@ -13,9 +16,49 @@ class Login extends Component {
         super()
         this.state = {
             showPass: true,
-            press: false
+            press: false,
+            userEmail: "",
+            userPassword: "",
+            role: '3',
+            snackIsVisible: false,
         }
     }
+
+    handleLogin = () => {
+        console.log(this.state)
+        axios.post(`http://192.168.43.199:8083/api/user/checkUser`, {
+            userEmail: this.state.userEmail,
+            userPassword: this.state.userPassword,
+            userRole: this.state.role
+        })
+
+            .then(res => {
+
+
+                if (res.data.userEmail !== undefined) {
+                
+                    CommonUser.user = res.data
+                    this.props.navigation.navigate("Home", { screen: Home })
+                }
+                else {
+                    this.setState({
+                        snackIsVisible: !this.state.snackIsVisible
+                    });
+                }
+
+                axios.get(`http://192.168.43.199:8083/api/driver/driver/` + CommonUser.user.userEmail)
+                .then(res => {
+                    CommonUser.driver = res.data;
+                })
+                .catch(error => { console.log(error) });
+
+            })
+            .catch(error => {
+                this.setState({
+                    snackIsVisible: !this.state.snackIsVisible
+                });
+            });
+    };
 
     showPass = () => {
         if(this.state.press == false) {
@@ -40,6 +83,9 @@ class Login extends Component {
                         placeholder={'Username'}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
+                        keyboardType="email-address"
+                        onChangeText={userEmail => this.setState({ userEmail })}
+                        value={this.state.userEmail}
                     />
                 </View>
                 <View style={styles.inputContainer}>
@@ -51,6 +97,8 @@ class Login extends Component {
                         secureTextEntry={this.state.showPass}
                         placeholderTextColor={'rgba(0,0,0,0.5)'}
                         underlineColorAndroid='transparent'
+                        onChangeText={userPassword => this.setState({ userPassword })}
+                        value={this.state.userPassword}
                     />
 
                     <TouchableOpacity style={styles.btnEye}
@@ -58,9 +106,27 @@ class Login extends Component {
                         <Icon name={this.state.press == false ? 'ios-eye' : 'ios-eye-off'} size={26} color={'rgba(0,0,0,0.5)'} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.btnLogin} onPress={() => this.props.navigation.navigate("Home", {screen:Home})}>
+                <TouchableOpacity style={styles.btnLogin} onPress={this.handleLogin}>
                     <Text style={styles.text}>Login</Text>
                 </TouchableOpacity>
+                <Snackbar
+                    visible={this.state.snackIsVisible}
+                    //SnackBar visibility control
+                    textMessage="Your email or password incorrect"
+                    //Text on SnackBar
+                    actionHandler={() => {
+                        //After handling click making nackBar invisible
+                        this.setState({
+                            snackIsVisible: !this.state.snackIsVisible
+                        });
+                    }}
+                    actionText="try again"
+                    //action Text to print on SnackBar
+                    distanceCallback={distance => {
+                        //Number indicating distance taken up by snackbar
+                        this.setState({ distance: distance });
+                    }}
+                />
             </ImageBackground>
         );
     }
@@ -105,7 +171,7 @@ const styles = StyleSheet.create({
         width: WIDTH - 55,
         height: 45,
         borderRadius: 25,
-        fontSize: 20,
+        fontSize: 16,
         paddingLeft: 45,
         backgroundColor: 'rgba(255,255,255,0.7)',
         color: 'rgba(55,55,55,0.8)',
